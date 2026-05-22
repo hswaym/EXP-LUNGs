@@ -1,0 +1,299 @@
+:root {
+    --bg-dark: #050505;
+    --bg-surface: #0A0A0C;
+    --text-primary: rgba(255, 255, 255, 0.9);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --accent-amber: #FF6B35;
+    --accent-cyan: #00D6FF;
+    --nav-height: 60px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+/* Loading Screen */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1s ease;
+}
+
+.loader-content {
+    text-align: center;
+    width: 300px;
+}
+
+.loader-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.loader-bar {
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.loader-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--accent-amber), var(--accent-cyan));
+    transition: width 0.1s linear;
+}
+
+/* Typography Editorial Medical Precision */
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.9) 60%, var(--accent-amber) 150%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+}
+
+p, li {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    background-color: rgba(5, 5, 5, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-left .logo {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+}
+
+.nav-center {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-center a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+}
+
+.nav-center a:hover {
+    color: var(--text-primary);
+    text-shadow: 0 0 10px rgba(0, 214, 255, 0.5);
+}
+
+/* CTA Buttons */
+.cta-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    background-clip: padding-box;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, var(--accent-amber), var(--accent-cyan));
+}
+
+.cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 1px; right: 1px; bottom: 1px; left: 1px;
+    background: #050505;
+    z-index: -1;
+    border-radius: inherit;
+    transition: opacity 0.3s ease;
+}
+
+.cta-btn:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.3), 0 0 15px rgba(0, 214, 255, 0.3);
+}
+
+.primary-glow {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    margin-bottom: 24px;
+}
+
+.secondary-link {
+    display: block;
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 32px;
+    transition: opacity 0.3s ease;
+}
+
+.secondary-link:hover {
+    opacity: 0.8;
+}
+
+.micro-copy {
+    font-size: 0.9rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Storyteller Container */
+.story-container {
+    position: relative;
+    /* The height determines the scroll length. We'll set this dynamically in JS to match frames * scroll_factor */
+}
+
+/* Sticky Canvas Area */
+.canvas-wrapper {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#lung-sequence {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintained by drawing logic in JS */
+}
+
+.bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    height: 60vw;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(13,8,5,0.8) 0%, rgba(5,5,5,0) 70%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Text Chapters */
+.chapters {
+    position: relative;
+    z-index: 20;
+    pointer-events: none;
+    margin-top: -100vh; /* Pull chapters up over the sticky canvas */
+}
+
+.chapter {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8vw;
+}
+
+.content-block {
+    max-width: 500px;
+    opacity: 0; /* Handled by GSAP */
+    pointer-events: auto;
+}
+
+.center-align { justify-content: center; text-align: center; }
+.center-align .content-block { max-width: 800px; }
+.left-align { justify-content: flex-start; text-align: left; }
+.right-align { justify-content: flex-end; text-align: left; }
+
+.final-hero {max-width: 800px;}
+
+/* Responsive Polish */
+@media (max-width: 1024px) {
+    h1 { font-size: 3rem; }
+    h2 { font-size: 1.5rem; }
+    .nav-center { display: none; }
+    .chapter { padding: 0 5vw; }
+    .left-align, .right-align { justify-content: center; text-align: center; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .nav-right .cta-btn { display: none; }
+}

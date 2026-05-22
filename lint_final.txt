@@ -1,0 +1,149 @@
+
+> lung-atlas@0.1.0 lint
+> eslint
+
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\backend\venv\Lib\site-packages\matplotlib\backends\web_backend\js\mpl.js
+   58:9   error    Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  107:54  warning  '_canvas_div' is defined but never used          @typescript-eslint/no-unused-vars
+  109:52  warning  '_canvas_div' is defined but never used          @typescript-eslint/no-unused-vars
+  112:9   error    Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  333:58  warning  '_e' is defined but never used                   @typescript-eslint/no-unused-vars
+  347:9   error    Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  354:26  warning  '_event' is defined but never used               @typescript-eslint/no-unused-vars
+  444:51  warning  '_msg' is defined but never used                 @typescript-eslint/no-unused-vars
+  495:51  warning  '_msg' is defined but never used                 @typescript-eslint/no-unused-vars
+  576:18  warning  'e' is defined but never used                    @typescript-eslint/no-unused-vars
+  657:51  warning  '_event' is defined but never used               @typescript-eslint/no-unused-vars
+  657:59  warning  '_name' is defined but never used                @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\backend\venv\Lib\site-packages\matplotlib\backends\web_backend\js\mpl_tornado.js
+  6:10  warning  'mpl_ondownload' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\backend\venv\Lib\site-packages\matplotlib\backends\web_backend\js\nbagg_mpl.js
+   11:31  warning  '_event' is defined but never used               @typescript-eslint/no-unused-vars
+   54:33  warning  '_format' is defined but never used              @typescript-eslint/no-unused-vars
+  101:49  warning  '_remove_interactive' is defined but never used  @typescript-eslint/no-unused-vars
+  113:9   error    Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  122:9   error    Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+  129:26  warning  '_event' is defined but never used               @typescript-eslint/no-unused-vars
+  190:48  warning  '_evt' is defined but never used                 @typescript-eslint/no-unused-vars
+  230:58  warning  '_name' is defined but never used                @typescript-eslint/no-unused-vars
+  240:51  warning  '_msg' is defined but never used                 @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\backend\venv\Lib\site-packages\torch\utils\model_dump\code.js
+   57:17  warning  'children' is defined but never used             @typescript-eslint/no-unused-vars
+  524:21  warning  'offset' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  524:29  warning  'size' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  524:35  warning  'stride' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  524:43  warning  'grad' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  525:12  warning  'dtype' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  525:24  warning  'device' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  525:32  warning  'numel' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  529:21  warning  'offset' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  529:29  warning  'size' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  529:35  warning  'stride' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  529:43  warning  'quantizer' is assigned a value but never used   @typescript-eslint/no-unused-vars
+  529:54  warning  'grad' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  530:12  warning  'dtype' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  530:24  warning  'device' is assigned a value but never used      @typescript-eslint/no-unused-vars
+  530:32  warning  'numel' is assigned a value but never used       @typescript-eslint/no-unused-vars
+  538:15  warning  'name' is assigned a value but never used        @typescript-eslint/no-unused-vars
+  544:19  warning  'key' is assigned a value but never used         @typescript-eslint/no-unused-vars
+  631:11  error    Unexpected aliasing of 'this' to local variable  @typescript-eslint/no-this-alias
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\backend\venv\Lib\site-packages\torch\utils\model_dump\htm.mjs
+  2:117  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:331  warning  Unexpected default export of anonymous function                        import/no-anonymous-default-export
+  2:501  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:763  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:814  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\backend\venv\Lib\site-packages\torch\utils\model_dump\preact.mjs
+  2:180   warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:256   warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:464   warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:803   warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:1219  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:1358  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:1450  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:2155  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:2513  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:2720  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:2984  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3078  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3170  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3267  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3332  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3465  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3699  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3742  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:3807  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:4208  warning  'e' is defined but never used                                          @typescript-eslint/no-unused-vars
+  2:4212  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:4531  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:5092  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:5448  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:5556  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:5602  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:5744  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6185  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6263  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6291  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6387  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6428  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6681  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6759  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:6878  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:7120  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:7370  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:7390  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:7606  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:7988  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:8006  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:8095  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:8428  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:8858  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:8991  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:9091  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:9467  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+  2:9686  warning  Expected an assignment or function call and instead saw an expression  @typescript-eslint/no-unused-expressions
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\app\analyze\result\[id]\page.tsx
+  126:33  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\app\history\page.tsx
+  43:20  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\EmailCapture.tsx
+  5:10  warning  'Check' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\LaunchCanvas.tsx
+  17:12  warning  'opacity' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\analyze\AnalysisLoader.tsx
+  75:31  warning  'isPending' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\analyze\DiagnosisSidebar.tsx
+  3:10  warning  'motion' is defined but never used  @typescript-eslint/no-unused-vars
+  4:31  warning  'Rocket' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\analyze\ImageUploader.tsx
+    5:23  warning  'FileBadge' is defined but never used                                                                                                                                                                                                                                                    @typescript-eslint/no-unused-vars
+    5:61  warning  'Activity' is defined but never used                                                                                                                                                                                                                                                     @typescript-eslint/no-unused-vars
+  153:41  warning  Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\analyze\NeuralStatusBar.tsx
+  3:10  warning  'Activity' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\analyze\SeverityGauge.tsx
+  20:42  warning  'shadowColor' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\components\interactive\CirculatoryFlow.tsx
+  27:24  warning  'time' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\hsway\OneDrive\Desktop\Lung Segment\src\hooks\useAnalysis.ts
+  1:20  warning  'useCallback' is defined but never used  @typescript-eslint/no-unused-vars
+
+??? 108 problems (6 errors, 102 warnings)
+

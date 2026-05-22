@@ -1,0 +1,77 @@
+================================================================================
+          EXPLUNG-U CHEST SCAN ANALYZER - ACADEMIC PROJECT CONTRIBUTION
+================================================================================
+
+Group Members:
+1. Riya   (Frontend Interface Designer & Responsive Layouts - Simple UX)
+2. Swaym  (Premium Interactive, 3D Volumetric Math & Parallax Scrolling Lead)
+3. Vedant (Core AI Pipeline, 3D Volumetric Mesh Reconstructor & WebGL Lead)
+4. Yash   (Clinical Intelligence, Backend Logic & Database Engineer)
+
+--------------------------------------------------------------------------------
+                   DETAILED PROJECT TASK & FEATURE DISTRIBUTION
+--------------------------------------------------------------------------------
+
+[1] RIYA — FRONTEND INTERFACE DESIGNER & RESPONSIVE LAYOUTS (Simple UX)
+================================================================================
+• Role: Frontend Layout & Demographics Form Developer
+• Features: 
+  - Standard landing page sections and structural dashboard columns.
+  - Clinical demographic inputs form (Patient Name, Age, Gender, and Medical History).
+  - Main history panels structure and navigation tab buttons.
+  - Organization and management of static asset images inside the public directory.
+• What She Used Personally:
+  - Next.js JSX tags to build basic structural layouts.
+  - TailwindCSS grid structures (e.g. "grid grid-cols-1 md:grid-cols-3") and vanilla flexbox classes to ensure panels adapt to mobile screens.
+  - HTML5 semantic markup tags (<main>, <section>, <form>) for clean structure.
+  - Outfit Sans Font configuration inside the global styling hierarchy (globals.css).
+
+
+[2] SWAYM — PREMIUM INTERACTIVE, 3D VOLUMETRIC MATH & PARALLAX SCROLLING LEAD
+================================================================================
+• Role: Premium Interactive UX, Volumetric 3D Math & Animation Engineer
+• Features:
+  - Custom scroll-linked parallax animations on the landing page.
+  - Animated live status handshake transition ("Under Progress" -> "Is Live") inside the Hero View and global footer.
+  - Volumetric 3D Lung Mathematics: Formulated the 3D ellipsoid bounding equations and depth factor sinusoidal attenuation formulas to mathematically extrude 2D flat contours into smooth 3D organ volumes.
+  - Interactive 3D WebGL Viewport Container: Built the Next.js 3D canvas rendering shell and the toggling control mechanics.
+  - Interactive 3D OrbitControls Camera Binding: Designed mouse zoom, pan, and rotation boundaries to enable radiologists to interactively inspect volumetric models.
+  - Touchable global footer telemetry nodes and floating diagnostic drawer.
+• What He Used Personally:
+  - Framer Motion (<motion.div>, <AnimatePresence>, and custom spring-physics transitions) to create fluid animations.
+  - Formulated 3D Cartesian coordinates ellipsoid equations (((Z-zc)/zr)**2 + ((Y-yc)/yr)**2 + ((X-xc)/xr)**2 <= 1.0) and NumPy depth attenuation calculations (np.sin(np.pi * Z / max(depth - 1, 1))) inside _build_volume in visualizer.py to shape organic 3D volumes.
+  - Three.js OrbitControls properties (enableZoom, minDistance, maxDistance) to bind mouse scrolling and rotations smoothly.
+  - React State (useState) hooks paired with a 1.8-second timer (setTimeout) to simulate the database status connection handshake.
+
+
+[3] VEDANT — CORE AI PIPELINE, 3D VOLUMETRIC MESH RECONSTRUCTOR & WEBGL LEAD
+================================================================================
+• Role: Deep Learning Classifier, Volumetric 3D Marching Cubes & WebGL Lead
+• Features:
+  - Custom DenseNet-121 classifier loading (custom_classifier.pth) with dynamic 4-class checkpoint mapping.
+  - Dynamic input-specific SmoothGradCAM++ heatmaps and zero-latency startup warmup tensor pipelines.
+  - Volumetric 3D Lung Reconstruction backend: Wrote marching cubes polygonization mesh synthesis logic from 3D voxel arrays.
+  - Dual-mesh vertex-color GLB synthesizer and dynamic Next.js WebGL lazy-chunk loader.
+  - Absolute X-Ray to Heatmap Radiologist Alpha-Blending controls.
+• What He Used Personally:
+  - PyTorch (torch.load, map_location, and linear head adapters) to run custom classifier weights.
+  - TorchCAM (torchcam.methods.SmoothGradCAMpp) targeting 'features.denseblock4' with dynamic hook registrations and unregistrations inside predict_and_explain.
+  - Scikit-Image (measure.marching_cubes) and Trimesh inside visualizer.py to programmatically execute marching cubes polygonization and bake dual-mesh vertex-colored GLB files (solid Cobalt Blue clean anatomy "LungBase" and Cobalt-to-Crimson gradient "LungHeatmap").
+  - Next.js Dynamic Imports (import() with { ssr: false }) to lazily chunk heavy Three.js scripts and keep build sizes light.
+  - Variable React opacity state binders absolute-layered over the raw X-Ray.
+
+
+[4] YASH — CLINICAL INTELLIGENCE, BACKEND LOGIC & DATABASE ENGINEER
+================================================================================
+• Role: Clinical Insight Calculations, Backend Routes, A4 PDF Engine & Cloud DB Lead
+• Features:
+  - Pathology-specific AI recommendations (OTC medication suggestions) and Urgency badges.
+  - Clinician Annotations card input, notes syncing FastAPI endpoint, and Supabase integration.
+  - Dynamic A4 PDF printable report generation incorporating all clinical parameters.
+  - Database schema column-pruning protection layers and Firebase auth setups.
+• What He Used Personally:
+  - Conditional guidance dictionaries and severity criteria mapping lists inside backend/services/insight.py.
+  - FastAPI routers with custom Pydantic schemas (ClinicianNotesRequest) to securely capture doctor feedback.
+  - ReportLab PDF library (SimpleDocTemplate, Paragraph, Table, Spacer, and custom TableStyles) in pdf_generator.py to dynamically construct formatted diagnostic PDF report cards.
+  - Supabase client integrations paired with Python exception-handling try/except blocks to prune schema-incompatible keys automatically if the remote database throws schema-cache mismatch codes (PGRST204), preventing database lockups.
+================================================================================

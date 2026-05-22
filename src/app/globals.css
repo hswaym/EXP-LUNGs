@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=Orbitron:wght@700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #050505;
+  --color-bg-secondary: #0A0A0A;
+  --color-bg-card: #0F0F0F;
+  --color-bg-card-hover: #141414;
+
+  --color-text-display: #FFFFFF;
+  --color-text-heading: #F2F2F2;
+  --color-text-subheading: #CCCCCC;
+  --color-text-body: #B3B3B3;
+  --color-text-muted: #808080;
+  --color-text-label: #595959;
+
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-brand: 'Orbitron', sans-serif;
+
+  --color-accent-warm: #E85A2A;
+  --color-accent-cool: #00B4D8;
+  --color-accent-crimson: #DC143C;
+  --color-accent-cobalt: #1E40AF;
+
+  --color-status-healthy: #00CC6A;
+  --color-status-warning: #FFB800;
+  --color-status-critical: #FF3B3B;
+}
+
+/* Base resets & utilities */
+@layer base {
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-body);
+    font-family: var(--font-body);
+    overscroll-behavior: none;
+    margin: 0;
+    padding: 0;
+    /* Hide scrollbar for immersive cinematic feel */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  body::-webkit-scrollbar {
+    display: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-text-heading);
+    font-family: var(--font-display);
+    margin: 0;
+  }
+}
+
+/* Custom Component Classes from PCE Spec */
+@layer components {
+  .glass-panel-medical {
+    background: rgba(10, 10, 10, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .text-shadow-smart {
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  }
+
+  .text-gradient-heading {
+    background: linear-gradient(180deg,
+        #FFFFFF 0%,
+        rgba(255, 255, 255, 0.85) 50%,
+        rgba(0, 180, 216, 0.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .nav-glass {
+    background-color: rgba(5, 5, 5, 0.80);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .card-glass {
+    background-color: rgba(15, 15, 15, 0.65);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid rgba(0, 180, 216, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  }
+
+  .cta-button {
+    background: transparent;
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    border-radius: 6px;
+    padding: 8px 20px;
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    margin: -1px;
+    /* border thickness */
+    border-radius: inherit;
+    background: linear-gradient(to right, var(--color-accent-warm), var(--color-accent-cool));
+  }
+
+  .cta-button:hover {
+    background: rgba(255, 107, 53, 0.10);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.20);
+  }
+}
