@@ -23,6 +23,54 @@ export default function LoginPage() {
     router.push("/");
   }
 
+  const handleSandboxBypass = (customMsg?: string) => {
+    setLoading(true);
+    setErrorMsg("");
+    
+    const cleanEmail = email || 'sandbox-specialist@explung.med';
+    const userId = "mock-uid-" + cleanEmail.replace(/[^a-zA-Z0-9]/g, "_");
+    const payload = {
+      sub: userId,
+      email: cleanEmail,
+      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24,
+      role: "authenticated"
+    };
+    const payloadB64 = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
+    const mockToken = `mockheader.${payloadB64}.mocksignature`;
+    const mockUser = {
+      id: userId,
+      email: cleanEmail,
+      created_at: new Date().toISOString(),
+      app_metadata: { provider: 'email' },
+      user_metadata: {
+        name: "Sandbox Specialist",
+        avatar_url: ""
+      },
+      aud: 'authenticated',
+      role: 'authenticated',
+    };
+    const mockSession = {
+      access_token: mockToken,
+      token_type: 'bearer',
+      expires_in: 3600,
+      refresh_token: 'mock-refresh-token',
+      user: mockUser,
+      expires_at: Math.floor(Date.now() / 1000) + 3600,
+    };
+    
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('explung-mock-session', JSON.stringify(mockSession));
+      localStorage.setItem('explung-offline-mode', 'true');
+    }
+    
+    triggerMockAuthChange('SIGNED_IN', mockSession);
+    
+    setSuccessMsg(customMsg || "Sandbox Bypass Activated: Simulating diagnostic gateway console... Redirecting...");
+    setTimeout(() => {
+      router.push("/");
+    }, 1500);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
@@ -72,46 +120,7 @@ export default function LoginPage() {
       const errMsg = err.message || "An unexpected error occurred.";
       if (errMsg.includes("Failed to fetch") || !window.navigator.onLine) {
         console.warn("[Login Page] Offline fallback activated on catch.");
-        
-        const cleanEmail = email || 'admin@skillgap.edu';
-        const userId = "mock-uid-" + cleanEmail.replace(/[^a-zA-Z0-9]/g, "_");
-        const payload = {
-          sub: userId,
-          email: cleanEmail,
-          exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24,
-          role: "authenticated"
-        };
-        const payloadB64 = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
-        const mockToken = `mockheader.${payloadB64}.mocksignature`;
-        const mockUser = {
-          id: userId,
-          email: cleanEmail,
-          created_at: new Date().toISOString(),
-          app_metadata: { provider: 'email' },
-          user_metadata: {},
-          aud: 'authenticated',
-          role: 'authenticated',
-        };
-        const mockSession = {
-          access_token: mockToken,
-          token_type: 'bearer',
-          expires_in: 3600,
-          refresh_token: 'mock-refresh-token',
-          user: mockUser,
-          expires_at: Math.floor(Date.now() / 1000) + 3600,
-        };
-        
-        if (typeof window !== 'undefined') {
-          localStorage.setItem('explung-mock-session', JSON.stringify(mockSession));
-          localStorage.setItem('explung-offline-mode', 'true');
-        }
-        
-        triggerMockAuthChange('SIGNED_IN', mockSession);
-        
-        setSuccessMsg("Offline Mode Activated: Simulating diagnostic gateway console... Redirecting...");
-        setTimeout(() => {
-          router.push("/");
-        }, 1500);
+        handleSandboxBypass();
       } else {
         if (
           errMsg.includes("auth/invalid-api-key") || 
@@ -121,12 +130,12 @@ export default function LoginPage() {
           errMsg.includes("API key") ||
           errMsg.includes("Firebase:")
         ) {
-          setIsFirebaseUnconfigured(true);
-          setErrorMsg("Firebase Auth Link Pending: The cloud authentication provider requires a valid custom Web API Key & Project ID configuration.");
+          console.warn("[Login Page] Invalid or mock Firebase keys detected. Auto-activating high-fidelity Offline Sandbox mode...");
+          handleSandboxBypass("Demo Mode Activated: Cloud services are unconfigured. Redirecting to Sandbox Console...");
         } else {
           setErrorMsg(errMsg);
+          setLoading(false);
         }
-        setLoading(false);
       }
     }
   };
@@ -149,62 +158,13 @@ export default function LoginPage() {
         msg.includes("API key") ||
         msg.includes("Firebase:")
       ) {
-        setIsFirebaseUnconfigured(true);
-        setErrorMsg("Firebase Auth Link Pending: The cloud authentication provider requires a valid custom Web API Key & Project ID configuration.");
+        console.warn("[Login Page] Invalid or mock Firebase keys detected. Auto-activating high-fidelity Offline Sandbox mode...");
+        handleSandboxBypass("Demo Mode Activated: Cloud services are unconfigured. Redirecting to Sandbox Console...");
       } else {
         setErrorMsg(msg || "Failed to authenticate via Google. Please check your network or try again.");
+        setLoading(false);
       }
-    } finally {
-      setLoading(false);
     }
-  };
-
-  const handleSandboxBypass = () => {
-    setLoading(true);
-    setErrorMsg("");
-    
-    const cleanEmail = email || 'sandbox-specialist@explung.med';
-    const userId = "mock-uid-" + cleanEmail.replace(/[^a-zA-Z0-9]/g, "_");
-    const payload = {
-      sub: userId,
-      email: cleanEmail,
-      exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24,
-      role: "authenticated"
-    };
-    const payloadB64 = btoa(unescape(encodeURIComponent(JSON.stringify(payload))));
-    const mockToken = `mockheader.${payloadB64}.mocksignature`;
-    const mockUser = {
-      id: userId,
-      email: cleanEmail,
-      created_at: new Date().toISOString(),
-      app_metadata: { provider: 'email' },
-      user_metadata: {
-        name: "Sandbox Specialist",
-        avatar_url: ""
-      },
-      aud: 'authenticated',
-      role: 'authenticated',
-    };
-    const mockSession = {
-      access_token: mockToken,
-      token_type: 'bearer',
-      expires_in: 3600,
-      refresh_token: 'mock-refresh-token',
-      user: mockUser,
-      expires_at: Math.floor(Date.now() / 1000) + 3600,
-    };
-    
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('explung-mock-session', JSON.stringify(mockSession));
-      localStorage.setItem('explung-offline-mode', 'true');
-    }
-    
-    triggerMockAuthChange('SIGNED_IN', mockSession);
-    
-    setSuccessMsg("Sandbox Bypass Activated: Simulating diagnostic gateway console... Redirecting...");
-    setTimeout(() => {
-      router.push("/");
-    }, 1500);
   };
 
   return (
